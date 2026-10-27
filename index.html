@@ -58,7 +58,7 @@ h3{font-family:'Bebas Neue',Impact,sans-serif;font-weight:400;font-size:1.9em;ma
 <div id="stage"><div id="book"></div></div>
 <div id="bar" role="toolbar" aria-label="Navigation du menu">
 <button id="prev" aria-label="Page précédente">‹</button>
-<span id="cnt">1 / 8</span>
+<span id="cnt">1 / 9</span>
 <button id="next" aria-label="Page suivante">›</button>
 <button id="fs" aria-label="Plein écran">⛶</button>
 <button id="sh" aria-label="Partager">⤴</button>
@@ -127,6 +127,7 @@ var TB=[['Burgers',2],['Tacos',5],['Sandwich',6],['Poutine',7],['Boissons',8]],t
 TB.forEach(function(t){var b=document.createElement('button');b.textContent=t[0];b.onclick=function(){pf.flip(t[1])};tb.appendChild(b)});
 function upd(i){cnt.textContent=(i+1)+' / '+pages.length;var k=-1;TB.forEach(function(t,j){if(i>=t[1])k=j});[].forEach.call(tb.children,function(b,j){b.className=j===k?'on':''})}
 pf.on('flip',function(e){upd(e.data)});
+upd(0);
 document.getElementById('prev').onclick=function(){pf.flipPrev()};
 document.getElementById('next').onclick=function(){pf.flipNext()};
 document.getElementById('fs').onclick=function(){try{document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen()}catch(e){}};
